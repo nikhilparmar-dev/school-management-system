@@ -16,7 +16,7 @@ https://school-management-system-a4wy.onrender.com/
 
 | Role | Username | Password |
 |---|---|---|
-| Demo Admin | demo_principal | demo_principal |
+| Demo Admin | demo_principle | demo_principle |
 
 ---
 
