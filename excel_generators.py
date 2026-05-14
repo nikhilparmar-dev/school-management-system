@@ -1,5 +1,5 @@
 """
-Excel generators for Rajivnagar Shala Dashboard
+Excel generators for demo Shala Dashboard
 GUN_SLIP format and PARINAM/MARKSHEET format
 """
 import io

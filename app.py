@@ -532,7 +532,7 @@ def _generate_student_pdf(student_id):
 <!-- ══════════════ PAGE 1: English Profile ══════════════ -->
 <div class="page p1">
   <div class="p1-header">
-    <h1>Rajivnagar Primary School</h1>
+    <h1>demo Primary School</h1>
     <p>Student Profile Report</p>
   </div>
   <div class="p1-body">
@@ -588,7 +588,7 @@ def _generate_student_pdf(student_id):
     {docs_section}
   </div>
   <div class="p1-footer">
-    <span>Rajivnagar Primary School, Rajivnagar, Kadi, Mehsana, Gujarat</span>
+    <span>demo Primary School, demo, Kadi, Mehsana, Gujarat</span>
     <span>Generated: {str(date.today())}</span>
   </div>
 </div>
@@ -618,7 +618,7 @@ def _generate_student_pdf(student_id):
 
     <div class="p2-row">
       <span class="p2-lbl">શાળાનું નામ :</span>
-      <span class="p2-val"><b>રાજીવનગર પ્રાથમિક શાળા</b></span>
+      <span class="p2-val"><b>demo પ્રાથમિક શાળા</b></span>
     </div>
 
     <div class="p2-row">
@@ -790,7 +790,7 @@ def _generate_excel(my_class, semester):
 
     ws = wb.active
     ws.title = 'Marks'
-    ws['A1'] = 'RAJIVNAGAR PRIMARY SCHOOL'
+    ws['A1'] = 'demo PRIMARY SCHOOL'
     ws['A1'].font = Font(bold=True, size=14)
     ws.merge_cells('A1:C1')
     ws['A2'] = f'Class: {my_class}    Semester: {semester}    Year: 2025-26'
@@ -820,7 +820,7 @@ def _generate_excel(my_class, semester):
             cell.alignment = Alignment(horizontal='center' if ci != 3 else 'left')
 
     ws2 = wb.create_sheet('Attendance')
-    ws2['A1'] = f'RAJIVNAGAR PRIMARY SCHOOL — Attendance — {my_class}'
+    ws2['A1'] = f'demo PRIMARY SCHOOL — Attendance — {my_class}'
     ws2['A1'].font = Font(bold=True, size=13)
     ws2.merge_cells('A1:G1')
     for ci, h in enumerate(['Sr.', 'Roll', 'Name', 'Total Days', 'Present', 'Absent', 'Percentage'], 1):
@@ -843,7 +843,7 @@ def _generate_excel(my_class, semester):
     wb.save(output); output.seek(0)
     return send_file(output,
         mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-        as_attachment=True, download_name=f'Rajivnagar_{my_class}_Sem{semester}.xlsx')
+        as_attachment=True, download_name=f'demo_{my_class}_Sem{semester}.xlsx')
 
 
 def _build_marks_lookup(my_class, semester):
@@ -860,7 +860,7 @@ def _build_marks_lookup(my_class, semester):
 
 def _generate_gunslip_excel(my_class, semester):
     students, subjects, marks_data = _build_marks_lookup(my_class, semester)
-    output = generate_gun_slip('રાજીવનગર પ્રાથમિક શાળા', 'કડી', my_class, semester, '2025-26', students, subjects, marks_data)
+    output = generate_gun_slip('demo પ્રાથમિક શાળા', 'કડી', my_class, semester, '2025-26', students, subjects, marks_data)
     cls_num = my_class.replace('Class ', '')
     return send_file(output, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                      as_attachment=True, download_name=f'GUN_SLIP_STD_{cls_num}_Sem{semester}.xlsx')
@@ -869,7 +869,7 @@ def _generate_gunslip_excel(my_class, semester):
 def _generate_parinam_excel(my_class, semester):
     students, subjects, marks_data = _build_marks_lookup(my_class, semester)
     all_att = (supabase.table('attendance').select('*').execute().data) or []
-    output  = generate_parinam('રાજીવનગર પ્રાથમિક શાળા', 'કડી', my_class, semester, '2025-26', students, subjects, marks_data, all_att)
+    output  = generate_parinam('demo પ્રાથમિક શાળા', 'કડી', my_class, semester, '2025-26', students, subjects, marks_data, all_att)
     cls_num = my_class.replace('Class ', '')
     return send_file(output, mimetype='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
                      as_attachment=True, download_name=f'PARINAM_STD_{cls_num}_Sem{semester}.xlsx')
@@ -1112,7 +1112,7 @@ def teacher_download_attendance_30days():
     start_str = start_date.strftime('%d-%m-%Y')
     end_str = end_date.strftime('%d-%m-%Y')
 
-    ws['A1'] = 'RAJIVNAGAR PRIMARY SCHOOL'
+    ws['A1'] = 'demo PRIMARY SCHOOL'
     ws['A2'] = f'Class: {my_class}'
     ws['A3'] = 'Attendance Register (Last 30 Days)'
     ws['A4'] = f'From: {start_str} To: {end_str}'
@@ -1438,7 +1438,7 @@ def principal_download_attendance_30days():
     start_str = start_date.strftime('%d-%m-%Y')
     end_str = end_date.strftime('%d-%m-%Y')
 
-    ws['A1'] = 'RAJIVNAGAR PRIMARY SCHOOL'
+    ws['A1'] = 'demo PRIMARY SCHOOL'
     ws['A2'] = f'Class: {class_name}'
     ws['A3'] = 'Attendance Register (Last 30 Days)'
     ws['A4'] = f'From: {start_str} To: {end_str}'
