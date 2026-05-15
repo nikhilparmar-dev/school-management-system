@@ -172,11 +172,28 @@ Add project screenshots here.
 
 Suggested screenshots:
 
-- Login Page
-- Dashboard
-- Student Management
-- Attendance Panel
-- Reports Section
+### 🔐 Login Page
+<img src="screenshots/login.jpg" width="900"/>
+
+---
+
+### 📊 Dashboard
+<img src="screenshots/dashboard.jpg" width="900"/>
+
+---
+
+### 👨‍🎓 Students Page
+<img src="screenshots/students.jpg" width="900"/>
+
+---
+
+### 📝 Report Generation
+<img src="screenshots/report.jpg" width="900"/>
+
+---
+
+### 📈 Marks Management
+<img src="screenshots/marks.jpg" width="900"/>
 
 ---
 
